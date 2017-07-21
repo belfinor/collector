@@ -1,0 +1,24 @@
+{
+  "daemon": {
+    "pid": "collector.pid",
+    "dir": "."
+  },
+  "log": {
+    "template": "collector-%Y%m%d.log",
+    "period":   86400,
+    "save":     7,
+    "level":    "info"
+  },
+  "server": {
+    "host":"0.0.0.0",
+    "port": 5001
+  },
+  "storage": {
+    "buffer": 1000,
+    "path": "path",
+    "index": "path/last_id",
+    "save":  86400,
+    "period": 60
+  }
+}
+
