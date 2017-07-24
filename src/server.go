@@ -44,7 +44,7 @@ func (s *Server) handler(conn net.Conn) {
   defer conn.Close()
   defer log.Info( "connection closed" )
 
-  st := Stream{ data: []byte{} }
+  st := ST.Inst()
 
   log.Info( "income connection" )
 

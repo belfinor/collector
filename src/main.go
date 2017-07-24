@@ -4,11 +4,12 @@ package main
 import (
   "flag"
   "github.com/belfinor/Helium/daemon"
+  "github.com/belfinor/Helium/io/stream/writer"
   "github.com/belfinor/Helium/log"
 )
 
 
-var ST *Storage
+var ST *writer.Stream
 
 
 func main() {
@@ -33,8 +34,7 @@ func main() {
     
     log.Info( "collector start" )
 
-    ST = InitStorage()
-    go ST.Writer()
+    ST = writer.New( &cfg.Storage )
 
     server := &Server{ Host: cfg.Server.Host, Port: cfg.Server.Port }
     server.Start()
