@@ -13,7 +13,7 @@ name="collector"
 exec="/usr/bin/$name"
 daemon="/usr/sbin/daemonize -u root"
 logfile="/var/log/collector/$name.log"
-PIDFILE="/var/run/colletor/collector.pid"
+PIDFILE="/var/run/collector/collector.pid"
 
 start() {
     [ -f $CONFIG ] || exit 6
