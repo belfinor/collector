@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+CDIR=$(pwd)
+cd ~/rpm/SOURCES
+rm -rf collector*
+git clone "git@github.com:belfinor/collector.git"
+tar czfv collector.tar.gz collector
+rpmbuild -bb --sign collector/collector.spec
+
