@@ -38,7 +38,7 @@ install -d  %{buildroot}%{_sysconfdir}/%{name}
 install -d  %{buildroot}%{_sysconfdir}/init.d
 install -d  %{buildroot}/var/log/%{name}
 install -p -m 0755 ./%{name} %{buildroot}%{_bindir}/%{name}
-install -p -m 0755 ./etc/config.json.example %{buildroot}%{_sysconfdir}/%{name}/%{name}.json.example
+install -p -m 0755 ./etc/%{name}.json %{buildroot}%{_sysconfdir}/%{name}/%{name}.json.example
 install -p -m 0755 ./etc/init.d %{buildroot}%{_sysconfdir}/init.d/%{name}
 
 %files
