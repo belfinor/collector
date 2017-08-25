@@ -1,0 +1,5 @@
+collector
+*.log
+*.pid
+*.json
+

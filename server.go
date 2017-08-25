@@ -1,6 +1,11 @@
 package main
 
 
+// @author  Mikhail Kirillov <mikkirillov@yandex.ru>
+// @version 1.002
+// @date    2017-08-25
+
+
 import (
   "fmt"
   "github.com/belfinor/Helium/log"
@@ -45,6 +50,7 @@ func (s *Server) handler(conn net.Conn) {
   defer log.Info( "connection closed" )
 
   st := ST.Inst()
+  decoder := &Decoder{}
 
   log.Info( "income connection" )
 
@@ -57,7 +63,10 @@ func (s *Server) handler(conn net.Conn) {
      }
 
      if n > 0 {
-       st.Write( buffer[0:n] )
+       res := decoder.Write( buffer[0:n] )
+       if res != nil && len(res) > 0 {
+         st.Write( buffer[0:n] )
+       }
      }
    }
 }
