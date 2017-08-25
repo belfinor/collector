@@ -1,7 +1,7 @@
 %{!?BUILD_NUMBER: %define BUILD_NUMBER 1}
 Name:           collector
-Version:        1.0.0
-Release:        080302
+Version:        1.0.1
+Release:        082501
 Group:          Applications/Internet
 Summary:        Binary data collector
 License:        MIT License
@@ -51,6 +51,8 @@ install -p -m 0755 ./etc/init.d %{buildroot}%{_sysconfdir}/init.d/%{name}.exampl
 %pre
 
 %changelog
+* Fri Aug 25 2017 Mikhail Kirillov <mikkirillov@yandex.ru> - 1.0.1
+ - stream decoder before write log
 
 * Thu Aug 03 2017 Mikhail Kirillov <mikkirillov@yandex.ru> - 1.0.0
  - first package version
