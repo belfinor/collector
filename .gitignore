@@ -2,4 +2,4 @@ collector
 *.log
 *.pid
 *.json
-
+path
