@@ -2,8 +2,8 @@ package main
 
 
 // @author  Mikhail Kirillov <mikkirillov@yandex.ru>
-// @version 1.002
-// @date    2017-08-25
+// @version 1.003
+// @date    2017-11-16
 
 
 import (
@@ -54,7 +54,7 @@ func (s *Server) handler(conn net.Conn) {
 
   log.Info( "income connection" )
 
-   buffer := make( []byte, 4098 )
+   buffer := make( []byte, 16392 )
 
    for {
      n, err := conn.Read( buffer )
@@ -65,7 +65,7 @@ func (s *Server) handler(conn net.Conn) {
      if n > 0 {
        res := decoder.Write( buffer[0:n] )
        if res != nil && len(res) > 0 {
-         st.Write( buffer[0:n] )
+         st.Write( res )
        }
      }
    }
