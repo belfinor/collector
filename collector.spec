@@ -1,7 +1,7 @@
 %{!?BUILD_NUMBER: %define BUILD_NUMBER 1}
 Name:           collector
-Version:        1.0.1
-Release:        082501
+Version:        1.0.2
+Release:        111601
 Group:          Applications/Internet
 Summary:        Binary data collector
 License:        MIT License
